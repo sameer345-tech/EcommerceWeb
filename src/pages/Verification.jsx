@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
-import userAuth from '../appWrite/UserAuth'
+import userAuth from '../appWrite/userAuth'
 import { useQuery } from '@tanstack/react-query';
 import Spinner from '../components/Spinner';
 import { useDispatch } from 'react-redux';

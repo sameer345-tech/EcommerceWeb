@@ -1,7 +1,7 @@
 import React, { useReducer, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import userAuth from '../appWrite/UserAuth';
+import userAuth from '../appWrite/userAuth';
 import { useQuery } from "@tanstack/react-query"
 function SignUp() {
 

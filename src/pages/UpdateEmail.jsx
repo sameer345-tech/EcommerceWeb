@@ -1,5 +1,5 @@
 import React from 'react'
-import userAuth from '../appWrite/UserAuth';
+import userAuth from '../appWrite/userAuth';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 

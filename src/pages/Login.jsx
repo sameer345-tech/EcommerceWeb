@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import userAuth from '../appWrite/UserAuth';
+import userAuth from '../appWrite/userAuth';
 import { useQueryClient, useMutation } from "@tanstack/react-query";
 import { login } from '../store/loginReducer';
 import { useDispatch } from 'react-redux';

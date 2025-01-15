@@ -6,7 +6,7 @@ import Alert from './Alert';
 import { useQuery } from '@tanstack/react-query';
 import { fetchCardItems } from '../feautures/productSlice';
 import { login } from '../store/loginReducer';
-import userAuth from '../appWrite/UserAuth';
+import userAuth from '../appWrite/userAuth';
 import dataBaseService from '../appWrite/dataBaseService';
 import { logout } from '../store/loginReducer';
 
