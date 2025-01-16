@@ -25,13 +25,13 @@ function Login() {
           let currentUser = await userAuth.getCurrentuser();
 
           if(!currentUser.emailVerification){
-            await userAuth.sendVerification("http://localhost:5173/verification");
+            await userAuth.sendVerification("https://ecommerce-web-three-navy.vercel.app/verification");
             setLinkSentMessage("Verification link sent to your email");
 
          }
          setLoginSuccess("Login successfully");
          setTimeout(() => {
-          navigate("/")
+          
 
         }, 3000);
 
@@ -45,7 +45,8 @@ function Login() {
       
     },
      onSuccess: () => {
-    return   queryClient.invalidateQueries(["currentUser"]);
+     queryClient.invalidateQueries(["currentUser"]);
+    navigate("/")
       
      }
     

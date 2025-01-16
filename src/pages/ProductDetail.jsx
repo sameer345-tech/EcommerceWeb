@@ -82,7 +82,9 @@ function ProductDetail() {
            
            <>
            <Container>
-                <button onClick={handleBtnClick}> Go back </button>
+                <button onClick={handleBtnClick} className="bg-orange-700 hover:bg-black text-white font-bold py-2 px-4 rounded">
+                    Go back
+                </button>
             </Container>
             <Container>
                 <div className="bg-gray-100 dark:bg-gray-800 py-8">
@@ -97,9 +99,7 @@ function ProductDetail() {
                                         <button type='button' className="w-full bg-orange-700 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700" onClick={handleAddToCart}>Add to Cart</button>
                                     </div>
                                     
-                                    <div className="w-1/2 px-2">
-                                        <button className="w-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600">Add to Wishlist</button>
-                                    </div>
+                                   
                                 </div>
                             </div>
                             {errorMsg ? <center><h2 style={{color: "red", fontWeight: "bold"}}>{errorMsg}</h2></center> : null}

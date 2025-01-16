@@ -33,11 +33,10 @@ function SignUp() {
     try {
       let userSignup = await userAuth.signUp(Email, Password, Name);
       if (userSignup) setLoginMessage("click login to continue");
-      console.log("User Created Successfully!");
       setShowPopup(true);
     } catch (error) {
       setError(error.message);
-      console.error("Error creating account:", error);
+      throw error;
     }
   };
   return (
