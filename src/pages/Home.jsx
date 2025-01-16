@@ -4,6 +4,7 @@ import ProductCard from '../components/ProductCard';
 import Spinner from '../components/Spinner';
 import { useFetchApi } from '../Api/useFetchApi';
 import { useQuery } from "@tanstack/react-query";
+import { Link,NavLink } from 'react-router-dom';
 
 
 function Home() {
