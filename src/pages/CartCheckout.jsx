@@ -42,9 +42,10 @@ function CartCheckout() {
   const updateQuantityMutation = useMutation({
     mutationFn: async ({ id, quantity }) => {
       await dataBaseService.updateQuantity(id, quantity); 
+      handleUpdatePopup();
+
     },
     onSuccess: () => {
-      handleUpdatePopup();
       return  queryClient.invalidateQueries(["cartItems"]);
     },
   });
@@ -70,6 +71,7 @@ function CartCheckout() {
         {/* Cart Items Section */}
         <div className="mb-6">
           <h2 className="text-2xl font-semibold text-gray-700 mb-4">Cart Items</h2>
+          {showUpdatePopup && <div className= " w-1/2 mx-auto text-center bg-green-100 text-green-800 p-3 rounded-lg mb-4"> Quantity updated.</div>}
           {showPopup && <div className="bg-green-100 text-green-800 p-3 rounded-lg mb-4"> Item deleted successfully</div>}
           {cartItems?.length > 0 ? (
             <ul>
@@ -103,7 +105,7 @@ function CartCheckout() {
                           +
                         </button>
                       </div>
-                      {showUpdatePopup && <div className="bg-green-100 text-green-800 p-3 rounded-lg mb-4"> Quantity updated.</div>}
+                      
 
                     </div>
                   </div>
