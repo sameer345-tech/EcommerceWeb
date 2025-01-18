@@ -20,21 +20,24 @@ function Login() {
      
       try { 
          let userLogin = await userAuth.login(email,password);
-          console.log("User Logged in Successfully!");
+          // console.log("User Logged in Successfully!");
          if(userLogin) {
           let currentUser = await userAuth.getCurrentuser();
-
-          if(!currentUser.emailVerification){
+          if(!currentUser) {
+            return false
+          }
+         else if(!currentUser.emailVerification){
             await userAuth.sendVerification("https://ecommerce-web-three-navy.vercel.app/verification");
             setLinkSentMessage("Verification link sent to your email");
+         }
+         else {
+          setLoginSuccess("Login successfully");
+          setTimeout(() => {
+            navigate("/")
+      
+          }, 2000);
 
          }
-         setLoginSuccess("Login successfully");
-         setTimeout(() => {
-          
-
-        }, 3000);
-
          
           }
 
@@ -46,8 +49,7 @@ function Login() {
     },
      onSuccess: () => {
      queryClient.invalidateQueries(["currentUser"]);
-    navigate("/")
-      
+
      }
     
   }
